@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AFNetworking.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSLog(@"submoudules test");
+ 
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"www.google.it"]
+                                             cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                         timeoutInterval:60.0];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    
 }
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
